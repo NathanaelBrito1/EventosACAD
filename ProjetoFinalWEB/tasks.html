@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Eventos Universitários</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <header class="bg-primary text-white py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+        
+        </div>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link active" style='color: white;' href="paginainicial.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" style='color: white;' href="tasks.html">Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" style='color: white;' href="cadastro.html">Entre/Cadastre-se</a></li>
+                <li class="nav-item"><a class="nav-link" style='color: white;' href="paginasobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-4 flex-grow-1">
+        <div class="row">
+            <section class="col-md-12">
+                <h2 class="container mt-4 flex-grow-1">Gerenciamento de Eventos</h2>
+                <div class="input-section mb-4">
+                    <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <input type="text" id="tituloTarefaInput" class="form-control" placeholder="Adicionar novo evento">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <select id="diaTarefaInput" class="form-control">
+                                <option value="Domingo">Domingo</option>
+                                <option value="Segunda">Segunda</option>
+                                <option value="Terça">Terça</option>
+                                <option value="Quarta">Quarta</option>
+                                <option value="Quinta">Quinta</option>
+                                <option value="Sexta">Sexta</option>
+                                <option value="Sábado">Sábado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <input type="time" id="horaTarefaInput" class="form-control">
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <button id="adicionarTarefaButton" class="btn btn-primary btn-block">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <input type="text" id="descricaoTarefaInput" class="form-control" placeholder="Descrição do evento">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <input type="date" id="dataInicioTarefaInput" class="form-control" placeholder="Data de Início">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <input type="date" id="dataFimTarefaInput" class="form-control" placeholder="Data de Fim">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <input type="text" id="localizacaoTarefaInput" class="form-control" placeholder="Localização">
+                        </div>
+                    </div>
+                </div>
+                <div class="search-section mb-4">
+                    <div class="input-group">
+                        <input type="text" id="buscarTarefaInput" class="form-control" placeholder="Buscar tarefa por nome ou dia">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul id="listaTarefas" class="list-group"></ul>
+            </section>
+            <section class="checklist col-md-6 mb-4">
+                <h2>Checklist de Chamada</h2>
+                <div class="form-group">
+                    <label for="turmaSelect">Selecione a Turma:</label>
+                    <select class="form-control" id="turmaSelect">
+                        <option value="turma1">Turma AB</option>
+                        <option value="turma2">Turma CD</option>
+                        <option value="turma3">Turma EF</option>
+                        
+                    </select>
+                </div>
+                <div id="checklist" class="mb-3"></div>
+                <button id="gerarChecklistButton" class="btn btn-primary">Gerar Checklist</button>
+            </section>
+        </div>
+    </main>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+<section class="container mt-4 flex-grow-1">
+    <h2>Inscrição de Participantes</h2>
+    <form id="inscricaoForm">
+        <div class="form-group">
+            <label for="nomeParticipanteInput">Nome:</label>
+            <input type="text" class="form-control" id="nomeParticipanteInput" placeholder="Digite seu nome">
+        </div>
+        <div class="form-group">
+            <label for="emailParticipanteInput">Email:</label>
+            <input type="email" class="form-control" id="emailParticipanteInput" placeholder="Digite seu email">
+        </div>
+        <div class="form-group">
+            <label for="eventoSelect">Selecione o Horario para o evento:</label>
+            <select class="form-control" id="eventoSelect">
+                <option value="Horario AB">Horario AB</option>
+                <option value="Horario CD">Horario CD</option>
+                <option value="Horario EF">Horario EF</option>
+                
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Inscrever-se</button>
+    </form>
+</section>
+<section class="container mt-4 flex-grow-1">
+    <h2>Participantes Inscritos</h2>
+    <ul id="participantesList" class="list-group"></ul>
+</section>
+
+</html>
